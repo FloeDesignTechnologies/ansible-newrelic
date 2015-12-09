@@ -39,6 +39,9 @@ The variables that can be passed to this role and a brief description about them
     
     # Connection timeout for collector host
     newrelic_timeout: 30
+    
+    # Sets the hostname of the server as it appears in New Relic. Default to OS-level hostname.
+    newrelic_hostname: "Foo Server"
 
 ## Examples
 
