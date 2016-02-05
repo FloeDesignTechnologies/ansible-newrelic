@@ -37,6 +37,11 @@ The variables that can be passed to this role and a brief description about them
     # Collector hostname
     newrelic_collector_host: collector.newrelic.com
     
+    # Labels for the server. Default to none.
+    newrelic_labels:
+      Foo: Bar
+      Bar: Foo
+    
     # Connection timeout for collector host
     newrelic_timeout: 30
     

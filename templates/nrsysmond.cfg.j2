@@ -121,6 +121,21 @@ pidfile={{ newrelic_pidfile }}
 collector_host={{ newrelic_collector_host }}
 
 #
+# Option : labels
+# Value  : A series of label_type/label_value pairings
+#          Each item in the pair is separated by a colon
+#          Each pair is separated by a semicolon
+#          e.g.
+#            labels = Environment:Production;DataCenter:EastUS;
+# Default: none
+#
+{% if newrelic_labels|default(False) != False %}
+labels={% for label_type, label_value in newrelic_labels.iteritems() %}{{ label_type }}:{{ label_value }};{% endfor %}
+{% else %}
+#labels=
+{% endif %}
+
+#
 # Option : timeout
 # Value  : How long the monitor should wait to contact the collector host. If
 #          the connection cannot be established in this period of time, the
